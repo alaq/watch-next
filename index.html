@@ -1,10 +1,12 @@
 <body>
     <div id="movies">
-        <div id="first">
-
-        </div>
+        <div id="first"></div>
     </div>
     <script>
-        fetch("/data/movies.json").then((r) => r.json()).then(console.log).catch(console.error)
+        const appendMovieNames = (data) => {
+            const firstContainer = document.getElementById("first");
+            firstContainer.textContent = data[0].title;
+        }
+        fetch("https://alaq.github.io/watch-next/data/movies.json").then((r) => r.json()).then(appendMovieNames).catch(console.error)
     </script>
 </body>
