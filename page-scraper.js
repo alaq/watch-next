@@ -1,6 +1,4 @@
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+const fs = require("fs");
 
 const scraperObject = {
     url:
@@ -34,13 +32,14 @@ const scraperObject = {
             await newPage.close();
         });
 
-        urls = urls.slice(0,2);
+        urls = urls.slice(0,3);
 
+        const movies = [];
         for(link in urls){
             let currentPageData = await pagePromise(urls[link]);
-            // scrapedData.push(currentPageData);
-            console.log(currentPageData);
+            movies.push(currentPageData);
         }
+        return fs.promises.writeFile("./data/movies.json", JSON.stringify(movies));
     },
 };
 
