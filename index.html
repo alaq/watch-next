@@ -1,0 +1,10 @@
+<body>
+    <div id="movies">
+        <div id="first">
+
+        </div>
+    </div>
+    <script>
+        fetch("/data/movies.json").then((r) => r.json()).then(console.log).catch(console.error)
+    </script>
+</body>
