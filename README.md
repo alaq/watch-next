@@ -4,4 +4,4 @@ This scrapes icheckmovies.com for the next movie on my list to watch. The more I
 
 To only get the movies I have not seen myself already I use [this](https://www.icheckmovies.com/lists/1001+movies+you+must+see+before+you+die/?user=soviel&sort=officialtoplists) url.
 
-The data is stored in a JSON and displayed via Github Pages.
+The data is fetched every day with a [Github Action](./.github/workflows/scrape.yml) which then commits the JSON to this repository. There is a next movie is displayed [on Github Pages](https://alaq.github.io/watch-next/).
