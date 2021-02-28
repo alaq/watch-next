@@ -37,9 +37,12 @@ const scraperObject = {
         const movies = [];
         for(link in urls){
             let currentPageData = await pagePromise(urls[link]);
+            console.log(currentPageData);
             movies.push(currentPageData);
         }
-        return fs.promises.writeFile("./data/movies.json", JSON.stringify(movies));
+        fs.promises.writeFile("./data/movies.json", JSON.stringify(movies)).then(() => {
+            process.exit(0);
+        })
     },
 };
 
