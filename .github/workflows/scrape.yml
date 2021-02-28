@@ -8,7 +8,7 @@ on:
       tags:
         description: 'Manual trigger'  
   schedule:
-    - cron:  '* 0 * * *'
+    - cron:  '0 9 * * *'
 name: Scrape Data
 jobs:
   build:
